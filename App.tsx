@@ -22,11 +22,16 @@ export default function App(): JSX.Element {
   const[symbols, setSymbols] = useState(false);
 
   const generatePasswordString = (passwordLength: number) => {
-            
+
   }
 
   const createPassword = (characters: string, passwordLength: number) => {
-
+    let result = "";
+    for (let i = 0; i < passwordLength; i++) {
+      const characterIndex: number = Math.round(Math.random() * characters.length);
+      result += characters.charAt(characterIndex)
+    }
+    return result;
   }
 
   const resetPassword = () => {
