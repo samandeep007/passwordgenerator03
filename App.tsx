@@ -110,7 +110,6 @@ export default function App(): JSX.Element {
                  
                   <Text style={styles.heading}>Include lowercase</Text>
                   <BouncyCheckbox
-                  inbuild
                     isChecked={lowerCase}
                     onPress={() => setLowerCase(!lowerCase)}
                     fillColor='#29AB87'
