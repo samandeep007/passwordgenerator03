@@ -107,12 +107,15 @@ export default function App(): JSX.Element {
                   />
                 </View>
                 <View style={styles.inputWrapper}>
+                 
                   <Text style={styles.heading}>Include lowercase</Text>
                   <BouncyCheckbox
+                  inbuild
                     isChecked={lowerCase}
                     onPress={() => setLowerCase(!lowerCase)}
                     fillColor='#29AB87'
                   />
+                  
                 </View>
                 <View style={styles.inputWrapper}>
                   <Text style={styles.heading}>Include uppercase</Text>
@@ -152,9 +155,11 @@ export default function App(): JSX.Element {
           </Formik>
         </View>
         {isPasswordGenerated && (
-          <View style={[styles.card, styles.cardElevated]}>
-            <Text style={styles.generatedPassword}>{password}</Text>
-          </View>
+           <View style={[styles.card, styles.cardElevated]}>
+           <Text style={styles.subTitle}>Result:</Text>
+           <Text style={styles.description}>Long Press to copy</Text>
+           <Text selectable={true} style={styles.generatedPassword}>{password}</Text>
+         </View>
         )}
       </SafeAreaView>
     </ScrollView>
